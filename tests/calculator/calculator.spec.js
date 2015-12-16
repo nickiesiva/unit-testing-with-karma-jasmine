@@ -1,7 +1,7 @@
 describe('CalculatorController', function() {
   // beforeEach(module('calculatorApp'));
 
-  var controller; 
+  var calculator; 
   var $scope;
 
   beforeEach(function () {
@@ -9,11 +9,27 @@ describe('CalculatorController', function() {
     
     inject(function (_$rootScope_, $controller){
       $scope = _$rootScope_.$new();
-      controller = $controller('CalculatorController', {$scope: $scope});
+      calculator = $controller('CalculatorController', {$scope: $scope});
     });
   });
 
-  it('says hello', function () {
-    expect(controller.greeting).toEqual('Hello');
+  it('Hi calculator', function () {
+    expect(calculator.greeting).toEqual("Yes, sir! I'm calcuclator.");
+  });
+
+  it('The sum function must exist', function (){
+    expect(calculator.sum).toBeDefined();
+  });
+
+  it('Must sum all of the arguments', function (){
+    expect(calculator.sum(2,3)).toEqual(5);
+  });
+
+  it('The subtract function must exist', function (){
+    expect(calculator.subtract).toBeDefined();
+  });
+
+  it('Must subtract first number with second number', function (){
+    expect(calculator.subtract(2,3)).toEqual(-1);
   });
 });
