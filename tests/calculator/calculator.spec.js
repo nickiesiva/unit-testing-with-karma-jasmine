@@ -1,5 +1,4 @@
 describe('CalculatorController', function() {
-  // beforeEach(module('calculatorApp'));
 
   var calculator; 
   var $scope;
